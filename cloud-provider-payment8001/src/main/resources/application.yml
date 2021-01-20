@@ -1,0 +1,26 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  ## 关闭热部署
+  devtools:
+    restart:
+      enabled: false
+#添加那个目录的文件需要restart
+#spring.devtools.restart.additional-paths=src/main/java
+#排除那个目录的文件不需要restart
+#spring.devtools.restart.exclude=static/**,public/**
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.djh.springcloud.entities
+
+
