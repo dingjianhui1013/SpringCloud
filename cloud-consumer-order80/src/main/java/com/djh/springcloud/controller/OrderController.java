@@ -15,7 +15,7 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://cloud-payment-service";
 
     @PostMapping("/consumer/payment/create")
     public CommonResult<Payment> create(@RequestBody Payment payment){
@@ -24,6 +24,6 @@ public class OrderController {
 
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> get(@PathVariable("id") Long id){
-        return restTemplate.getForObject(PAYMENT_URL+"payment/get/"+id,CommonResult.class);
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
     }
 }
