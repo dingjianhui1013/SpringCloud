@@ -1,5 +1,6 @@
 package com.djh.springcloud.controller;
 
+
 import com.djh.springcloud.entities.CommonResult;
 import com.djh.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ public class OrderController {
 
     @PostMapping("/consumer/payment/create")
     public CommonResult<Payment> create(@RequestBody Payment payment){
-        return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
+        return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment, CommonResult.class);
     }
 
     @GetMapping("/consumer/payment/get/{id}")
